@@ -6,9 +6,9 @@ import { addNotif } from "../reducers/notificationReducer"
 const Anecdote = ({ anecdote }) => {
   const dispatch = useDispatch()
 
-  const handleVote = ({ id, content }) => {
-    dispatch(vote(id))
-    dispatch(addNotif(`you voted '${content}'`))
+  const handleVote = (anecdote) => {
+    dispatch(vote(anecdote))
+    dispatch(addNotif(`you voted '${anecdote.content}'`))
   }
 
   return (
