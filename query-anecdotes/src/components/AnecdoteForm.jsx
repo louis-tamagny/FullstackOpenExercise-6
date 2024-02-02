@@ -13,6 +13,9 @@ const AnecdoteForm = () => {
       notificationDispatch({ type: 'SET', payload: `anecdote '${content}' created` })
       queryClient.invalidateQueries({ queryKey: ['anecdotes'] })
     },
+    onError: () => {
+      notificationDispatch({ type: 'SET', payload: 'too shord anecdote, must have length 5 or more' })
+    },
     retry: 1
   })
 

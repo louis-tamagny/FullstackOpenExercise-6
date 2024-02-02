@@ -7,7 +7,9 @@ export const getAnecdotes = () => {
 }
 
 export const createAnecdote = anecdote => {
-  return axios.post(baseUrl, anecdote).then(response => response.data)
+  return axios
+    .post(baseUrl, anecdote)
+    .then(response => response.data)
 }
 
 export const voteAnecdote = anecdote => {
